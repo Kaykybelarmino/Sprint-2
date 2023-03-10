@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+
+    <head>
+
+    </head>
+
+<body>
+    <h1>
+        <b>
+            <p style="text-align:center;">Simulador Financeiro</p>
+        </b>
+    </h1>
+    <h3>
+        Responda este questionário para descobrir o quão maiores suas vendas poderiam ser com o
+        monitoramento remoto de temperatura e umidade da Lettuce Company!
+        <br>
+        <br>
+        <br>
+        <br>
+    </h3>
+
+
+    <p>
+        Quantas unidades de rúcula você compra do seu fornecedor ao mês?
+        <input id="input_compra_rucula"><br>
+        Quantas unidades de alface você compra do seu fornecedor ao mês?
+        <input id="input_compra_alface"><br>
+        Quantas unidades de alface você vende ao mês?
+        <input id="input_venda_alface"><br>
+        Quantas unidades de rucula você vende ao mês?
+        <input id="input_venda_rucula"><br>
+        Qual o preço unitário pelo qual você compra a alface?
+        <input id="input_comprapreco_alface"><br>
+        Qual o preço unitário pelo qual você compra a rúcula?
+        <input id="input_comprapreco_rucula"><br>
+        Qual o preço unitário pelo qual você vende a alface?
+        <input id="input_vendapreco_alface"><br>
+        Qual o preço unitário pelo qual você vende a rúcula?
+        <input id="input_vendapreco_rucula"><br>
+        <button onclick="calculo()">Calcule Aqui !</button>
+    </p>
+    <div id="div_calculo"></div>
+</body>
+
+</html>
+<script>
+    function calculo() {
+        var ruculaCompra = Number(input_compra_rucula.value)
+        var alfaceCompra = Number(input_compra_alface.value)
+        var ruculaVenda = Number(input_venda_rucula.value)
+        var alfaceVenda = Number(input_venda_alface.value)
+        var precoCompraAlface = Number(input_comprapreco_alface.value)
+        var precoCompraRucula = Number(input_comprapreco_rucula.value)
+        var precoVendaAlface = Number(input_vendapreco_alface.value)
+        var precoVendaRucula = Number(input_vendapreco_rucula.value)
+        var VendaTotalAlface = (precoVendaAlface * alfaceVenda)
+        var VendaTotalRucula = (precoVendaRucula * ruculaVenda)
+        var CompraTotalAlface = (precoCompraAlface * alfaceCompra)
+        var CompraTotalRucula = (precoCompraRucula * ruculaCompra)
+        var LucroAlface = (VendaTotalAlface - CompraTotalAlface)
+        var LucroRucula = (VendaTotalRucula - CompraTotalRucula)
+        var ProjecaoAlface = (LucroAlface * 1.4)
+        var ProjecaoRucula = (LucroRucula * 1.4)
+
+
+        div_calculo.innerHTML =
+            `Olá Sr(a). Cliente, estimativas apontam que há uma perda de 40% no processo de distribuição de hortaliças
+         devido a condições de temperatura e humidade. Desse modo, seu lucro na venda de rúcula e alface é <b>R$${LucroAlface}<b> em Alface 
+            e de <b>R$${LucroRucula}<b> em Rucúla por mês, mas poderia ser de <b>R$${ProjecaoAlface}<b> e <b>R$${ProjecaoRucula}<b>, respectivamente <br> <br> <br> Com esta retenção de produtos o senhor pode estar economizando muito na quantidade de produtos comprados, podendo estar oferecendo um preço menor e além disso seus produtos irão durar até 14 dias. `
+
+        if (LucroAlface < 0) {
+            div_calculo.innerHTML =
+                'Recomendamos que ajuste os valores caso tenha inserido errado ou aumente suas vendas, com o valor atual você está tendo prejuízo.'
+        }
+        if (LucroRucula < 0) {
+            div_calculo.innerHTML =
+                'Recomendamos que ajuste os valores caso tenha inserido errado ou aumente suas vendas, com o valor atual você está tendo prejuízo.'
+        }
+
+    }
+
+
+
+
+</script>
