@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Simulador Financeiro</h2>
+
+    Qual seu nome? 
+    <input id="input_nome"><br>
+    Por quantos dias dura o frescor de sua alface? 
+    <input id="input_dias_alface" min="0" max="13"><br>
+    Por quantos dias dura o frescor de sua rúcula? 
+    <input id="input_dias_rucula" min="0" max="13"><br>
+    Quanto você fatura com a venda de alface por dia enquanto ela está fresca? 
+    <input id="input_venda_alface"><br>
+    Quanto você fatura com a venda de rúcula por dia enquanto ela está fresca?  
+    <input id="input_venda_rucula"><br>
+    <button onclick="analise_faturamento()">Analisar vendas</button>
+    <div id="div_lucro"></div>
+</body>
+</html>
+<script>
+    function analise_faturamento(){
+        var nome = input_nome.value
+        var venda_alface = Number(input_venda_alface.value)
+        var venda_rucula = Number(input_venda_rucula.value)
+        var alface_fresca = Number(input_dias_alface.value)
+        var rucula_fresca = Number(input_dias_rucula.value)
+
+        var faturamento_alface = alface_fresca * venda_alface 
+        var faturamento_rucula = rucula_fresca * venda_rucula
+        var faturamento_final = (venda_alface + venda_rucula) * 14
+        div_lucro.innerHTML = `<br> 
+        Olá ${nome}, seu faturamento com alfaces frescas é de <b>R$${faturamento_alface}</b> ao longo de ${alface_fresca} dias.<br>
+        E seu faturamento com rúculas frescas é de <b>R$${faturamento_rucula}</b> ao longo de ${rucula_fresca} dias.<br>
+        Porém, através do monitoramento de umidade e temperatura que nossos sensores realizam,<br>
+        é possível estender a durabilidade e frescor de suas alfaces e rúculas por até 14 dias,<br>
+        contribuindo para o lucro de <b>$${faturamento_final}</b> no total.`
+        
+    }
+</script>

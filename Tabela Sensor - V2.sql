@@ -6,7 +6,7 @@ idSensor int primary key not null,
 tipoSensor varchar(40) not null, 
 Setor varchar(1) not null,
 Produto varchar(40) not null constraint chkProduto check(Produto IN("Alface", "Rúcula")),
-Divisão varchar(1) not null,
+Divisao char(1) not null,
 idCadastro INT      
 );
 

@@ -1,6 +1,6 @@
 create database lettuce;
-drop database lettuce;
 use lettuce;
+drop table umidade_temperatura;
 create table umidade_temperatura (
 idUmidade_temperatura int primary key auto_increment,
 temperatura decimal (4,2),
