@@ -1,11 +1,10 @@
 CREATE DATABASE lettuce;
 USE lettuce;
-DROP TABLE cadastro;
 
 CREATE TABLE cadastro(
 idCadastro INT PRIMARY KEY not null auto_increment,
 mercado VARCHAR (20) not null,
-hortalica CHAR(15) not null constraint chkHortalica check (hortalica in('alface','rucula','alface e rucula')),
+hortalica VARCHAR(15) not null constraint chkHortalica check (hortalica in('alface','rucula','alface e rucula')),
 cargo CHAR(7) not null constraint chkCargo check(cargo in('gerente')),
 nome VARCHAR(45) not null,
 email VARCHAR(45) not null,
@@ -24,9 +23,13 @@ INSERT INTO cadastro(idCadastro, mercado, hortalica, cargo, nome, email, telefon
 (null,'O hortifruti','alface e rucula','gerente','Gerivaldo','ohortifruti@gmail.com','1194915665'),
 (null,'bertonili','rucula','gerente','alberto','bertonili@gmail.com','1192675926');
 SELECT * FROM cadastro;
+-- A Gerente carla teve uma promoção e entrou como supervisora, tendo seu irmão gêmeo,
+-- Carlos substituindo seu lugar como gerente, logo, atualizamos o nome da gerente da Cool Plant.
 UPDATE cadastro SET nome = 'Carlos'
        WHERE idCadastro = 4;
 SELECT * FROM cadastro;
+-- A Vila da folha infelizmente cancelou nossos serviços, 
+-- Então limpamos a tupla de seu cadastro.
 DELETE FROM cadastro 
        WHERE idCadastro = 2;
 

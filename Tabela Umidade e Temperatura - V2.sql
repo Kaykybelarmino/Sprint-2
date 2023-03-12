@@ -18,7 +18,10 @@ insert into umidade_temperatura(idUmidade_temperatura, temperatura, umidade, idS
 (5, 25.2, 30.00, 2),
 (6, 27.4, null, 3),
 (7, 29.0, 22.23, 4),
-(8, 32.0, 20.12, 4);
+(8, 32.0, 20.12, 4),
+(9, 25.2, null, 5);
 select * from umidade_temperatura; 
-desc cadastro;
-select * from cadastro;
+-- Kennedy queria remover um de seus sensores,
+-- devido a uma mudança em seu lote e pediu para remover os dados de seu sensor.
+DELETE FROM Umidade_temperatura
+ WHERE idUmidade_temperatura in(1,7,8);

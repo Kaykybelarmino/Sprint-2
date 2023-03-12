@@ -13,10 +13,10 @@ idCadastro INT
 insert into Sensor values
 (1, "LM35",3, "Alface", "A",1),
 (2, "DHT11",3, "Alface", "A",1),
-(3, "LM35",3, "Rúcula", "A",1),
-(4, "DHT11",3, "Rúcula", "A",1),
+(3, "LM35",3, "Rúcula", "A",2),
+(4, "DHT11",3, "Rúcula", "A",3),
 (5, "LM35",3, "Alface", "B",2),
-(6, "DHT11",3, "Alface", "B",2);
+(6, "DHT11",3, "Alface", "B",3);
 
 -- Divisão B do Sensor 5 parou de funcionar, enquanto não for consertado, ele ficará inativo
 delete from Sensor
@@ -25,7 +25,5 @@ delete from Sensor
 -- O sensor 6 teve que ser mudado para Divisão C do Mercado
 update Sensor set Divisão = "C"
 	where idSensor = 6;
-    drop table sensor;
 select*from Sensor;
 
-drop table Sensor;
