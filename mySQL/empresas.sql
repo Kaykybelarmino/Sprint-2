@@ -5,7 +5,7 @@ use lettuce;
 create table cadastroEmpresa (
 idEmpresa int primary key auto_increment,
 nome varchar(45),
-hortalicas char(19), constraint chkHortalica check(hortalicas in('alface', 'rucula','alface e rucula')),
+hortalicas char(20), constraint chkHortalica check(hortalicas in('alface', 'rucula','alface e rucula')),
 nomeReponsavel varchar (45),
 cpnj char(18),
 dtCadastro DATETIME default current_timestamp,
