@@ -10,12 +10,15 @@
 <body class="background">
 <div class="text"><br>
 
-    Preço do alface por quilo: <br> <input class="input" type="number" id="input_preco"><br><br>
-    Quantidade de alface transportada por mês (kg): <br> <input type="number" id="input_QtdTransporte"><br><br>
+    Preço do alface por quilo: <input class="input" type="number" id="input_preco"><br><br>
+    Quantidade de alface transportada por mês (kg): <input type="number" id="input_QtdTransporte"><br><br>
     <button onclick="calcular()">Calcular Perda</button><br><br>
     <div id="div_exibir"></div>
-
+   
 </div>
+
+<div id="div_footer" class="footer"></div>
+
 </body>
 </html>
 <script>
@@ -42,13 +45,14 @@
 
 
         div_exibir.innerHTML = `
-        De acordo com a FAO sua empresa está suscetível a perder 46% de verduras no transporte devido ao mau-monitoramento: <br><br>
+        De acordo com a FAO sua empresa está suscetível <span class='span_perda'>a perder 46%</span> de verduras no transporte devido ao mau-monitoramento: <br><br>
 
         Em um mês você perderá ${perdaM}kg e R$${perdaMF}.<br>
         Em um ano você perderá ${perdaA}kg e R$${perdaAF}. <br>
-        Com a nossa solução você vai ganhar R$${lucroMensal} em um mês.<br>
-        Em um ano você vai ganhar R$${lucroAnual}.
+        Com a nossa solução você irá reduzir sua perda em R$${lucroMensal} em um mês.<br>
+        Em um ano você irá reduzir sua perda em R$${lucroAnual}.
         `
+        div_footer.innerHTML = 'FAO*: Food Agriculture Organization'
     }
-
+   
 </script>

@@ -26,10 +26,11 @@ button {
 }
 
 .text{
-    text-align: center;
+    padding-left: 30px;
+    padding-bottom: 30px;
     margin: 100px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.756);
     background-size: auto;
     border-radius: 15px;
     border-style: dotted;
@@ -78,4 +79,15 @@ button {
                -1px 1px 0px#000000,                    
                 1px -1px 0px #000000,                  
                 1px 0px 0px #000000;
+}
+
+.span_perda{
+    font-weight: bold;
+}
+
+.footer{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 125px;
+    color: white
+   
 }
